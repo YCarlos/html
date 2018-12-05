@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="index-login.css">
+<title>弘文论坛登录</title>
+</head>
+
+<body>
+<div class="login">
+    <div class="login-body">
+       <div class="text-center">登录</div>
+       <form method="post" action="">
+       <div class="content-center">
+           <div class="text-shuru">
+             <input type="text" id="username" name="user" value="" placeholder="用户名" />
+           </div>
+           <div class="text-shuru">
+             <input type="password" id="password" name="password" value="" placeholder="密码" />   
+           </div>
+           <div class="img-verify">
+             <!--<span>验证码：</span>-->
+             <input type="text" style="width:60px;" name="verify" value="" placeholder="验证码">
+             <img onclick="javascript:this.src=this.src+'?time='+Math.random()"  src="{:captcha_src()}" alt="error">
+           </div>
+           <div class="form-tips">
+             <button type="button" id="login" class="btn btn-green">&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;</button>
+           </div>
+         </div>
+         </form>  
+    </div>
+    <div class="footer">
+      <ul>
+        <li>关于网站只是作者心血来潮所弄，很多功能还没时间开发</li>
+        <li>如果此网站有任何侵权的地方，请一定要联系QQ：3440638402，我们一定会及时改进，谢谢合作</li>
+      </ul>
+    </div>
+</div>
+<!--引入jquery库以符合下面的语法-->
+<script type="text/javascript" src="__STATIC__/lib/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('#login').on('click',function (event) {
+            $.ajax({
+                type:"POST",
+                url:"{:url('user/checkLogin')}",
+                data:$("form").serialize(),
+                dataType:'json',
+                success:function (data) {
+                    if (data.status==1){
+                        alert(data.message);
+                        window.location.href="{:url('index/index')}"
+                    }else{
+                        alert(data.message);
+                    }
+                }
+            });
+        })
+    })
+</script>
+</body>
+</html>

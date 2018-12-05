@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+	}
+body{
+	font-size:18px;
+	}
+.login{
+	/*background:#00C;*/
+	}
+.login-body{
+	position:relative;
+	top:100px;
+	width:300px;
+	margin:auto;
+	padding:35px 30px;
+	color:#999;
+	border-radius:6px;
+	background:#FFF;
+	box-shadow:1px 1px 4px #CCCCCC;
+	border:#F00 solid 1px;
+	line-height:46px;
+	}
+.text-center{
+	text-align:center;
+	}
+.form-tips{
+	font-size:.75rem;
+	color:#093;
+	}
+.form-tips button{
+	width:173px;
+	height:36px;
+	}
+.btn{
+	padding:0.4rem 1.2rem;
+	cursor:pointer;
+	border:1px solid #060;
+	border-radius:2px;
+	}
+.btn-green{
+	color:#FFF;
+	background:#060;
+	}
+.content-center{
+	margin-left:46px;
+	}
+.img-verify{
+	line-height:10px;
+	}
+.text-shuru{
+	/*line-height:46px;*/
+	}
+input{
+	height:28px;
+	}
+.footer{
+	width:100%;
+	height:60px;
+	position:fixed;
+	background:#999;
+	bottom:0;
+	text-align:center
+	}
